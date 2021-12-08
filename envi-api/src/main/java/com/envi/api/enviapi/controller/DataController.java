@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @CrossOrigin(maxAge = 3600)
-@RestController("/v1/data")
+@RestController()
 class DataController {
 
     private final DataService service;

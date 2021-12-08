@@ -14,13 +14,13 @@ class DashboardComponent extends Component {
 
   componentDidMount() {
     var api = (process.env.REACT_APP_API_URL ? process.env.REACT_APP_API_URL : "http://localhost:3000");
-    fetch(api + "/v1/data")
+    fetch(api)
       .then(res => res.json())
       .then(
         (result) => {
           this.setState({
             isLoaded: true,
-            items: result.items
+            items: result
           });
         },
         (error) => {
@@ -49,10 +49,11 @@ class DashboardComponent extends Component {
         </main>
       )
     } else {
+      console.log(items);
       return (
         <main>
           <h1>Dashboard</h1>
-          <p>Items: {items}</p>
+          <p>Items: {JSON.stringify(items)}</p>
         </main>
       )
     }
