@@ -11,7 +11,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="DATA")
 public class Data {
     @Id @GeneratedValue private Long id;
     private String name;

@@ -10,12 +10,11 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="COMMENTS")
 public class Comments {
     @Id @GeneratedValue private Long id;
     private String name;
     private String comment;
     @ManyToOne
-    @JoinColumn(name="cart_id", nullable=false)
-    private Data cart;
+    @JoinColumn(name="data_id", nullable=false)
+    private Data data;
 }
