@@ -16,6 +16,8 @@ services:
       - VIRTUAL_HOST=envi.example.com
       - LETSENCRYPT_HOST=envi.example.com
       - VIRTUAL_PORT=80
+    networks:
+      - docker_mNet
   
   envi-api:
     container_name: envi-api
@@ -35,6 +37,8 @@ services:
       - VIRTUAL_HOST=api.envi.example.com
       - LETSENCRYPT_HOST=api.envi.example.com
       - VIRTUAL_PORT=80
+    networks:
+      - docker_mNet
 
   envi-db:
     container_name: envi-db
@@ -44,6 +48,8 @@ services:
       POSTGRES_PASSWORD: example
     volumes:
       - "/mnt/data1/envi/db/data:/var/lib/postgresql/data:rw"
+    networks:
+      - docker_mNet
 
 networks:
   default:
