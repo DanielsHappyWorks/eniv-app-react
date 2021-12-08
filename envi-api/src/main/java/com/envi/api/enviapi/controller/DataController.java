@@ -43,7 +43,7 @@ class DataController {
     }
 
     @PutMapping("/{id}/comment")
-    Data putComment(@PathVariable Long id, @RequestBody Comments comments) {
+    Comments putComment(@PathVariable Long id, @RequestBody Comments comments) {
         return service.addComment(id, comments);
     }
 }

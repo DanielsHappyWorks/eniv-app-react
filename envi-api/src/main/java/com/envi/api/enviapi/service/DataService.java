@@ -2,6 +2,7 @@ package com.envi.api.enviapi.service;
 
 import com.envi.api.enviapi.model.Comments;
 import com.envi.api.enviapi.model.Data;
+import com.envi.api.enviapi.repository.CommentRepository;
 import com.envi.api.enviapi.repository.DataRepository;
 import org.springframework.stereotype.Service;
 
@@ -12,9 +13,11 @@ import java.util.Optional;
 @Service
 public class DataService {
     private final DataRepository repository;
+    private final CommentRepository commentRepository;
 
-    DataService(DataRepository repository) {
+    DataService(DataRepository repository, CommentRepository commentRepository) {
         this.repository = repository;
+        this.commentRepository = commentRepository;
     }
 
     public List<Data> findAll() {
@@ -33,16 +36,14 @@ public class DataService {
         repository.deleteById(id);
     }
 
-    public Data addComment(Long id, Comments comments) {
+    public Comments addComment(Long id, Comments comment) {
         Data data = repository.findById(id).orElse( null);
 
         if (data == null) {
           return null;
         }
 
-        List<Comments> commentsList = data.getCommentsList();
-        commentsList.add(comments);
-        data.setCommentsList(commentsList);
-        return repository.save(data);
+        comment.setData(data);
+        return commentRepository.save(comment);
     }
 }
