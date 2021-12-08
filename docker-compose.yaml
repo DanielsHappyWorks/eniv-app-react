@@ -6,7 +6,7 @@ services:
     build:
       context: ./envi/
       args:
-        REACT_APP_API_URL: https://envi.example.com
+        REACT_APP_API_URL: https://api.envi.example.com
     image: envi-app
     restart: always
     environment:
@@ -26,7 +26,8 @@ services:
       - PGID=1000
       - DB_NAME=postgres
       - DB_USER=root
-      - DB_PASS=example
+      - DB_DATABASE=postgres
+      - DB_PASSWORD=example
       - DB_DRIVER=postgresql
       - DB_HOST=envi-db
       - DB_PORT=5432
