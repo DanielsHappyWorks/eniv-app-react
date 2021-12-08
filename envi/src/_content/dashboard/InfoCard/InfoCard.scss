@@ -1,0 +1,15 @@
+@import "../../../_common/variables.scss";
+
+.InfoCard {
+    float: left;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba($primary,0.2);
+    transition: 0.3s;
+    width: 40%;
+    border-radius: 5px;
+    margin: 2%;
+}
+.InfoCard:hover {
+    box-shadow: 0 8px 16px 0 rgba($primary, 0.2);
+}

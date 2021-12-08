@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './dashboard.scss';
 import Loader from '../loader/Loader'
+import InfoCard from './InfoCard/InfoCard';
 
 class DashboardComponent extends Component {
   constructor(props) {
@@ -53,7 +54,11 @@ class DashboardComponent extends Component {
       return (
         <main>
           <h1>Dashboard</h1>
-          <p>Items: {JSON.stringify(items)}</p>
+          <div className="ItemCards">
+          {items.map(function(i){
+            return <InfoCard item={i}/>;
+          })}
+          </div>
         </main>
       )
     }

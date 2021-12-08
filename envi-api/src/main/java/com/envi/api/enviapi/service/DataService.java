@@ -5,6 +5,7 @@ import com.envi.api.enviapi.model.Data;
 import com.envi.api.enviapi.repository.DataRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,6 +41,9 @@ public class DataService {
         }
 
         List<Comments> commentsList = data.getCommentsList();
+        if(commentsList == null) {
+            List<Comments> commentsList = new ArrayList<>();
+        }
         commentsList.add(comments);
         data.setCommentsList(commentsList);
         return repository.save(data);

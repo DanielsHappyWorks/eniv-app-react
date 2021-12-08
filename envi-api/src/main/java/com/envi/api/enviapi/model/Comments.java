@@ -2,9 +2,7 @@ package com.envi.api.enviapi.model;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -12,8 +10,12 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name="COMMENTS")
 public class Comments {
     @Id @GeneratedValue private Long id;
     private String name;
     private String comment;
+    @ManyToOne
+    @JoinColumn(name="cart_id", nullable=false)
+    private Data cart;
 }

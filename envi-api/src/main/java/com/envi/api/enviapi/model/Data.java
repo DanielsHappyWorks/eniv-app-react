@@ -11,14 +11,15 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name="DATA")
 public class Data {
     @Id @GeneratedValue private Long id;
     private String name;
     private String description;
-    private Double longitude;
+    private Long longitude;
     private Double latitude;
     private String author;
-    @OneToMany(fetch=FetchType.EAGER)
+    @OneToMany(fetch=FetchType.EAGER, mappedBy = "data")
     private List<Comments> commentsList;
     private Long nextDate;
     private Long lastDate;

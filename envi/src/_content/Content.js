@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './content.scss';
-import Loader from './loader/Loader';
 import { Route, Routes } from 'react-router-dom';
 import UnderConstruction from './under_construction/UnderConstruction';
 import DashboardComponent from './dashboard/Dashboard';
+import Data from './data/Data'
 
 
 class Content extends Component {
@@ -17,7 +17,7 @@ class Content extends Component {
                 <Route exact path="/drawings" element={<UnderConstruction name="Drawings"/>} />
                 <Route exact path="/admin" element={<UnderConstruction name="Admin"/>} />
                 <Route exact path="/projects" element={<UnderConstruction name="Projects"/>} />
-                <Route exact path="/data/:id" element={<UnderConstruction name="Data"/>} />
+                <Route exact path="/data/:id" element={<Data name="Data"/>} />
             </Routes>
         </div>
       </main>
