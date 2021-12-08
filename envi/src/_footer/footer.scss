@@ -1,0 +1,12 @@
+@import "../_common/variables.scss";
+
+footer {
+    text-align: center;
+    padding: 16px;
+    background-color: $primary;
+    color: white;
+}
+
+footer p {
+    font-family: my-font-bold;
+}

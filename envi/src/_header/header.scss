@@ -1,0 +1,36 @@
+@import "../_common/variables.scss";
+
+.navbar {
+  overflow: hidden;
+  background-color: $primary;
+}
+
+.navbar ul {
+  padding: 0;
+  margin: 0;
+  height: inherit;
+  list-style-type: none;
+}
+
+.navbar li a, .navbar .logo {
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar li a {
+  float: right;
+  margin-top: 8px;
+}
+
+.navbar .logo {
+  float: left;
+  font-family: my-font-bold;
+  font-size: 25px;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: $secondary;
+}

@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'my-font';
+    font-style: normal;
+    font-weight: normal;
+    src: url('./Nexa Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'my-font-bold';
+    font-style: normal;
+    font-weight: bold;
+    src: url('./Nexa Bold.ttf') format('truetype');
+}
+
+
+body {
+    font-family: my-font;
+}
+
+$primary: #44924D;
+$secondary: #9BBE57;
+$ternary: #D6D954;
+
+
+a{
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+a:hover {
+    background-color: $secondary;
+  }
+
+main {
+    margin: 20px;
+}

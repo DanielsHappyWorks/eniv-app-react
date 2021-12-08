@@ -1,0 +1,51 @@
+version: '3'
+
+services:
+  envi:
+    container_name: envi
+    build:
+      context: ./envi/
+      args:
+        REACT_APP_API_URL: https://envi.example.com
+    image: envi-app
+    restart: always
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - URL=https://envi.example.com
+      - VIRTUAL_HOST=envi.example.com
+      - LETSENCRYPT_HOST=envi.example.com
+      - VIRTUAL_PORT=80
+  
+  envi-api:
+    container_name: envi-api
+    build: ./envi-api/
+    restart: always
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - DB_NAME=postgres
+      - DB_USER=root
+      - DB_PASS=example
+      - DB_DRIVER=postgresql
+      - DB_HOST=envi-db
+      - DB_PORT=5432
+      - DB_DLL_AUTO=create
+      - URL=https://api.envi.example.com
+      - VIRTUAL_HOST=api.envi.example.com
+      - LETSENCRYPT_HOST=api.envi.example.com
+      - VIRTUAL_PORT=80
+
+  envi-db:
+    container_name: envi-db
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+    volumes:
+      - "/mnt/data1/envi/db/data:/var/lib/postgresql/data:rw"
+
+networks:
+  default:
+    external:
+      name: docker_mNet
