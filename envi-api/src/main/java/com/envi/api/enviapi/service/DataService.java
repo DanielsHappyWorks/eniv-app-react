@@ -41,9 +41,6 @@ public class DataService {
         }
 
         List<Comments> commentsList = data.getCommentsList();
-        if(commentsList == null) {
-            List<Comments> commentsList = new ArrayList<>();
-        }
         commentsList.add(comments);
         data.setCommentsList(commentsList);
         return repository.save(data);
