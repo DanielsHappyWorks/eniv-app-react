@@ -15,6 +15,7 @@ public class Comments {
     @Id @GeneratedValue private Long id;
     private String name;
     private String comment;
+    private Long time;
     @ManyToOne
     @JoinColumn(name="data_id", nullable=false)
     @JsonIgnore

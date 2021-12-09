@@ -44,6 +44,7 @@ public class DataService {
         }
 
         comment.setData(data);
+        comment.setTime(System.currentTimeMillis()/1000L);
         return commentRepository.save(comment);
     }
 }
