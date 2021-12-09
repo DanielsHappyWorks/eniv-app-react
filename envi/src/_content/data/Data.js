@@ -33,12 +33,16 @@ class DataComponent extends Component {
       });
     }
     fetch(api + "/" + this.props.id)
-      .then(res => res.json())
+      .then(res => {
+        console.log(res)
+        return res.text()
+      })
       .then(
         (result) => {
+          console.log(result)
           this.setState({
             isLoaded: true,
-            item: result
+            item: JSON.parse(result)
           });
         },
         (error) => {
@@ -68,7 +72,7 @@ class DataComponent extends Component {
     } else {
       console.log(item);
       let comments = "";
-      if(item.commentsList != undefined && item.commentsList.length != 0) {
+      if(item.commentsList.length !== 0) {
         comments = <Comments id={this.props.id} comments={item.commentsList}/>
       }
       

@@ -52,8 +52,8 @@ class LoadDatabase {
                     .description("This is a place in Romania again")
                     .build();
             dataB = dataService.save(dataB);
-            dataService.addComment(dataA.getId(), Comments.builder().name("Roth Roth").comment("... Same date really?").build());
-            dataService.addComment(dataA.getId(), Comments.builder().name("Dan Dan").comment("... Not creative!").build());
+            dataService.addComment(dataB.getId(), Comments.builder().name("Roth Roth").comment("... Same date really?").build());
+            dataService.addComment(dataB.getId(), Comments.builder().name("Dan Dan").comment("... Not creative!").build());
 
 
             Data dataC = Data.builder()
@@ -66,8 +66,8 @@ class LoadDatabase {
                     .description("What a wonderful place")
                     .build();
             dataC = dataService.save(dataC);
-            dataService.addComment(dataA.getId(), Comments.builder().name("Mad Hatter").comment("Tis place is good fun.").build());
-            dataService.addComment(dataA.getId(), Comments.builder().name("The Rabbit").comment("Oh no were going to be late").build());
+            dataService.addComment(dataC.getId(), Comments.builder().name("Mad Hatter").comment("Tis place is good fun.").build());
+            dataService.addComment(dataC.getId(), Comments.builder().name("The Rabbit").comment("Oh no were going to be late").build());
 
             Data dataD = Data.builder()
                     .author("Dan Roth")
@@ -79,7 +79,7 @@ class LoadDatabase {
                     .description("Its here again")
                     .build();
             dataD = dataService.save(dataD);
-            dataService.addComment(dataA.getId(), Comments.builder().name("Mad Hatter").comment("Such repetition, much WOW!").build());
+            dataService.addComment(dataD.getId(), Comments.builder().name("Mad Hatter").comment("Such repetition, much WOW!").build());
 
             Data dataE = Data.builder()
                     .author("Luna Lovegood")
@@ -91,9 +91,9 @@ class LoadDatabase {
                     .description("This is not a place in Romania, given by a generator")
                     .build();
             dataE = dataService.save(dataE);
-            dataService.addComment(dataA.getId(), Comments.builder().name("Lord V").comment("Why wont Harry just leave me alone!").build());
-            dataService.addComment(dataA.getId(), Comments.builder().name("Harry Potter").comment("Died nearly once a year, 0/10 not recommended!").build());
-            dataService.addComment(dataA.getId(), Comments.builder().name("Hermione Granger").comment("Got a 112 on an exam, Now this is studying!").build());
+            dataService.addComment(dataE.getId(), Comments.builder().name("Lord V").comment("Why wont Harry just leave me alone!").build());
+            dataService.addComment(dataE.getId(), Comments.builder().name("Harry Potter").comment("Died nearly once a year, 0/10 not recommended!").build());
+            dataService.addComment(dataE.getId(), Comments.builder().name("Hermione Granger").comment("Got a 112 on an exam, Now this is studying!").build());
 
             Data dataF = Data.builder()
                     .author("Big Ben")
@@ -105,8 +105,8 @@ class LoadDatabase {
                     .description("The biggest of all the big clocks, just ticking away")
                     .build();
             dataF = dataService.save(dataF);
-            dataService.addComment(dataA.getId(), Comments.builder().name("Big Ben").comment("The best uncle ben!").build());
-            dataService.addComment(dataA.getId(), Comments.builder().name("Uncle Ben").comment("No It is I, the best uncle ben!").build());
+            dataService.addComment(dataF.getId(), Comments.builder().name("Big Ben").comment("The best uncle ben!").build());
+            dataService.addComment(dataF.getId(), Comments.builder().name("Uncle Ben").comment("No It is I, the best uncle ben!").build());
 
             Data dataG = Data.builder()
                     .author("John Doe")
@@ -118,8 +118,8 @@ class LoadDatabase {
                     .description("In the Sahel dessert there was a John Doe")
                     .build();
             dataG = dataService.save(dataG);
-            dataService.addComment(dataA.getId(), Comments.builder().name("John Doe").comment("Im Lost").build());
-            dataService.addComment(dataA.getId(), Comments.builder().name("Bob The Builder").comment("We cant fix this!").build());
+            dataService.addComment(dataG.getId(), Comments.builder().name("John Doe").comment("Im Lost").build());
+            dataService.addComment(dataG.getId(), Comments.builder().name("Bob The Builder").comment("We cant fix this!").build());
 
 
             Data dataH = Data.builder()

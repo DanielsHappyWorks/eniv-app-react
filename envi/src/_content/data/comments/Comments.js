@@ -15,7 +15,7 @@ class CommentsComponent extends Component {
         <div>
           <h3>Comments</h3>
           {this.props.comments.map(c => {     
-           return (<div><p><span style="font-weight:bold;">{c.name}</span> - {new Date(c.time * 1000).toLocaleString()} - {c.comment}</p></div>)
+           return (<div><p><span>{c.name}</span> - {new Date(c.time * 1000).toLocaleString()} - {c.comment}</p></div>)
           })}
         </div>
       )
